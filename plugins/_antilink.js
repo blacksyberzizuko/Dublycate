@@ -7,7 +7,7 @@ export async function before(m, { isAdmin, isBotAdmin }) {
   const isGroupLink = linkRegex.exec(m.text);
   const kickMessage = isAdmin
     ? `❌ *Link Detected*\nYour group admin can't be removed from a group.`
-    : `❌ *Link Detected*\nYou will be removed from the group.`;
+    : `*⚔QUEEN-SAKURA_ANTILINK⚔*\n❌ *Link Detected*\nYou will be removed from the group.`;
 
   if (chat.antiLink && isGroupLink) {
     await this.reply(m.chat, kickMessage, null, { mentions: [m.sender] });
@@ -17,6 +17,7 @@ export async function before(m, { isAdmin, isBotAdmin }) {
       await this.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
       await this.reply(m.chat, kickMessage, null, { mentions: [m.sender] });
       await this.sendMessage(m.chat, { delete: m.key });
+      m.react('🛡')
     }
   }
   return true;
