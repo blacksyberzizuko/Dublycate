@@ -30,7 +30,7 @@ let handler = async (m, {
         } = vid
         let dla = "Downloading audio please wait"
         let dls = "Downloading audio succes"
-
+        m.react('🎶')
         let captvid = `*_DOWNLOADING* ${title ? title : 'not know'} | *Duration:* ${timestamp ? timestamp : 'not know'} | *Views:* ${formatNumber(views) ? formatNumber(views) : 'not know'} | *Upload:* ${ago ? ago : 'not know'} | *Link:* ${url}_*`
         let ytthumb = await (await conn.getFile(thumbnail)).data
         let msg = await generateWAMessageFromContent(m.chat, {
