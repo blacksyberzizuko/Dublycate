@@ -6,6 +6,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
   let q = m.quoted ? m.quoted : m
   let c = m.quoted ? await m.getQuotedObj() : m.msg
   let msg = conn.cMod(m.chat, generateWAMessageFromContent(m.chat, { [m.quoted ? q.mtype : 'extendedTextMessage']: m.quoted ? c.message[q.mtype] : { text: '' || c }}, { quoted: null, userJid: conn.user.id }), text || q.text, conn.user.jid, { mentions: users })
+  m.react('👻')
   // console.log(msg)
   await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id })
 }
