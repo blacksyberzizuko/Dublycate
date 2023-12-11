@@ -5,11 +5,12 @@ let pp = await conn.profilePictureUrl(who).catch(_ => thumbnailUrl.getRandom())
 let name = await conn.getName(who)
 
   const sentMsg = await conn.sendContactArray(m.chat, [
-    [nomorown, `${await conn.getName(nomorown + '@s.whatsapp.net')}`, `💌 Developer Bot `, `Not Famous`, `sousakura666@gmail.com`, `🇯🇵 japan`, `📍 https://xxirfanx.github.io`, `👤 Owner zoro Bot`],
-    [`${conn.user.jid.split('@')[0]}`, `${await conn.getName(conn.user.jid)}`, `🎈 Whatsapp Bot`, `📵 Dont Spam`, `Nothing`, `🇯🇵 japan`, `📍 https://github.com/xxirfanx/zoromd`, `Just a normal bot that sometimes has an error ☺`]
+    [nomorown, `${await conn.getName(nomorown + '@s.whatsapp.net')}`, ` BOT DEVELOPER `, `I AM STUDENT`, `NOT ABOUT`, `FROM TO SRI-LANKA`, `THE QUEEN-SAKURA_OWNER NUMBER  94770378874`, `DEVELOPED BY SYBER-DEMONS_TEAM`],
+    [`${conn.user.jid.split('@')[0]}`, `${await conn.getName(conn.user.jid)}`, `THE MULTIDEVISE-WHATSAPP_BOT`, `YOU CAN USE THIS WHATSAPP BOT`, `SRI-LANKAN BEST WHATSAPP BOT`, `TO ANURADHAPURA`, ` https://github.com`, `ENJOY YOUR LIFE☺`]
   ], fkontak)
-  await conn.reply(m.chat,`Hello @${m.sender.split(`@`)[0]} Thats my owner, dont spam or i will block u`, sentMsg, {
+  await conn.reply(m.chat,`Hello @${m.sender.split(`@`)[0]} DONT USE IN SPAM `, sentMsg, {
                 mentions: [m.sender]
+                m.react('👨‍🚀')
             })
 }
 
