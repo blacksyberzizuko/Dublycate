@@ -415,10 +415,10 @@ text: text,
 contextInfo: {
 mentionedJid: [user],
 externalAdReply: {
-title: "© Zoro MD",
+title: "SAKURA-MD",
 body: "Group Notifications",
 thumbnailUrl: pp,
-sourceUrl: 'https://whatsapp.com/channel/0029Va4gIsn3WHTcFh97VU3s',
+sourceUrl: 'https://whatsapp.com',
 mediaType: 1,
 renderLargerThumbnail: true
 }}})
