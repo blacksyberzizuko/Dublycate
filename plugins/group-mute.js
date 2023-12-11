@@ -11,6 +11,7 @@ let handler = async (m, { conn, command, isOwner, isAdmin }) => {
 			break 
 	}
 	m.reply(`*${conn.user.name}* succeeded in *${command}* in this group`)
+	m.react('✅')
 }
 handler.command = /^mute|unmute$/i
 
