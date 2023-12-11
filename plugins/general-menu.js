@@ -9,22 +9,30 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
   
 let tags = {}
 const defaultMenu = {
-  before: `*🧚‍♀️QUEEN-SAKURA_MD🧚‍♀️*
-
-*🤖Bot name : QUEEN-SAKURA*
-*📡Library :  Baileys*
-*🗝Prefix :  %_p *
-*🛒Platform :  %platform*
-*🕰Uptime :  %muptime*
-*📆Date : [ %date ]_*
-*🧬Database :  %totalreg*
-
-*📜COMMAND-LIST*
+  before: `
+┏╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍❏  
+┃ *🧚‍♂️𝗤𝗨𝗘𝗘𝗡-𝗦𝗔𝗞𝗨𝗥𝗔_𝗠𝗗_𝗩2🧚‍♂️*
+┣╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍❏
+┃┏╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍┛
+┃┃ *🤖Bot name : QUEEN-SAKURA*
+┃┃ *User name : ${conn.user.name}*
+┃┃ *📡Library :  Baileys*
+┃┃ *🗝Prefix :  %_p*
+┃┃ *🛒Platform :  %platform*
+┃┃ *🕰Uptime :  %muptime*
+┃┃ *📆Date :  %date *
+┃┃ *🧬Database :  %totalreg*
+┃┃ *🧑‍💻Developed by : Syber-Demons_Team*
+┃┗╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍❏
+┗╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍❏
+  ┏━━━━━━━━━━━━━━━✘
+  ┃ *📜COMMAND-LIST*
+  ┗━━━━━━━━━━━━━━━✘
 `.trimStart(),
-  header: '⫹⫺ *“%category”* ⫹⫺',
-  body: `┆ \t ▢ *_%cmd%islimit%isPremium_* `,
-  footer: '┆',
-  after: `◎\t *_© ${conn.user.name}_* \t`,
+  header: '▢   *⫹⫺ _%category_ ⫹⫺*',
+  body: `┃ \t ▢ *_%cmd%islimit%isPremium_* `,
+  footer: '┇┇',
+  after: `◎\t *_ ${conn.user.name}_* \t`,
 }
   try {
     let name = m.pushName || conn.getName(m.sender)
@@ -146,7 +154,7 @@ let ppl = await( await conn.profilePictureUrl(m.sender, 'image').catch(() => 'ht
  //let fkon = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
 //let fotonya = 'https://telegra.ph/file/d43f196dc3417ca4c5338.jpg'
 // conn.sendMessage(m.chat, { image: { url: fotonya  }, caption: text.trim()}, { quoted: fkon })
-      await conn.sendMessage(m.chat, { text: text.trim(), contextInfo: { externalAdReply: { title: conn.user.name, body: '', thumbnailUrl: ppb, sourceUrl: "https://whatsapp.com/channel/0029Va4gIsn3WHTcFh97VU3s", mediaType: 1, renderLargerThumbnail: true }}})
+      await conn.sendMessage(m.chat, { text: text.trim(), contextInfo: { externalAdReply: { title: conn.user.name, body: '', thumbnailUrl: ppb, sourceUrl: "https://chat.whatsapp.com/FYPYqeucaxr4qwME8G6Tot", mediaType: 1, renderLargerThumbnail: true }}})
   } catch (e) {
     m.reply('An error occurred')
     m.reply(e)
