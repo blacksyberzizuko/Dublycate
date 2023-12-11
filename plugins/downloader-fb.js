@@ -4,7 +4,7 @@ import fg from 'api-dylux'
 
 const handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args[0]) {
-    throw `✳️ Please send the link of a Facebook video\n\n📌 EXAMPLE :\n*${usedPrefix + command}* https://www.facebook.com/Ankursajiyaan/videos/981948876160874/?mibextid=rS40aB7S9Ucbxw6v`;
+    throw `🧚‍♀️ Please send the link of a Facebook video\n EXAMPLE :\n*${usedPrefix + command}* https://www.facebook.com/Ankursajiyaan/videos/981948876160874/?mibextid=rS40aB7S9Ucbxw6v`;
   }
 
   const urlRegex = /^(?:https?:\/\/)?(?:www\.)?(?:facebook\.com|fb\.watch)\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i;
@@ -17,9 +17,11 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
   try {
     const result = await fg.fbdl(args[0]);
     const tex = `
-⊱ ─── {* Facebook dwd *} ─── ⊰
-↳ *VIDEO TITLE:* ${result.title}
-⊱ ────── {⋆♬⋆} ────── ⊰`
+*⫹⫺|QUEEN-SAKURA-FACEBOOK_DOWNLOADER|⫹⫺*
+
+*📝VIDEO TITLE:* ${result.title}
+
+*📅2023-2024 NEW VERSION BOT*`
 
     const response = await fetch(result.videoUrl)
     const arrayBuffer = await response.arrayBuffer()
@@ -29,6 +31,7 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
   } catch (error) {
     console.log(error)
     m.reply('⚠️ An error occurred while processing the request. Please try again later.')
+    m.react(Done)
   }
 }
 
