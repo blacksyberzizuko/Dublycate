@@ -106,16 +106,29 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       break
     default:
       if (!/[01]/.test(command)) return m.reply(`
-List option: welcome | delete | public | antilink | antidelete | antitoxic | autolevelup | detect | document | whitelistmycontacts | restrict | nyimak | autoread | pconly | gconly | swonly
-Contoh:
-${usedPrefix}enable welcome
-${usedPrefix}disable welcome
+『 𝗦𝗔𝗞𝗨𝗥𝗔-𝗠𝗗 𝗖𝗢𝗡𝗧𝗥𝗢𝗟 𝗖𝗢𝗠𝗠𝗔𝗡 』
+
+▢ 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 ❮ 𝗲𝗻𝗮𝗯𝗹 𝗼𝗿 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 ❯
+▢ 𝗗𝗘𝗟𝗘𝗧𝗘 ❮ 𝗲𝗻𝗮𝗯𝗹𝗲 𝗼𝗿 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 ❯
+▢ 𝗣𝗨𝗕𝗟𝗜𝗖 ❮ 𝗲𝗻𝗮𝗯𝗹𝗲 𝗼𝗿 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 ❯
+▢ 𝗔𝗡𝗧𝗜𝗟𝗜𝗡𝗞 ❮ 𝗲𝗻𝗮𝗯𝗹𝗲 𝗼𝗿 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 ❯
+▢ 𝗔𝗡𝗧𝗜𝗗𝗘𝗟𝗘𝗧𝗘 ❮ 𝗲𝗻𝗮𝗯𝗹𝗲 𝗼𝗿 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 ❯
+▢ 𝗔𝗨𝗧𝗢𝗟𝗘𝗩𝗘𝗟𝗨𝗣 ❮ 𝗲𝗻𝗮𝗯𝗹𝗲 𝗼𝗿 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 ❯
+▢ 𝗗𝗢𝗖𝗨𝗠𝗘𝗡𝗧 ❮ 𝗲𝗻𝗮𝗯𝗹𝗲 𝗼𝗿 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 ❯
+🔰 𝗲𝘅𝗮𝗺𝗽𝗹𝗲 : 
+${usedPrefix}enable public
+*©2023-2024 New version...*
 `.trim())
       throw false
   }
   m.reply(`
 *${type}* succeeded in *${isEnable ? 'on' : 'dead'}right* ${isAll ? 'for these bots' : isUser ? '' : 'for this chat'}
 `.trim())
+}
+await conn.sendMessage(m.chat, { text: text.trim(), contextInfo: { externalAdReply: { title: conn.user.name, body: '', thumbnailUrl: ppb, sourceUrl: "https://chat.whatsapp.com/FYPYqeucaxr4qwME8G6Tot", mediaType: 1, renderLargerThumbnail: true }}})
+  } catch (e) {
+    m.reply(e)
+  }
 }
 handler.help = ['en', 'dis'].map(v => v + 'able <option>')
 handler.tags = ['group', 'owner']
