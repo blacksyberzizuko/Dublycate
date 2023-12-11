@@ -8,8 +8,8 @@ const rl = createInterface(process.stdin, process.stdout)
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const require = createRequire(__dirname)
 
-say('Lightweight\nWhatsApp Bot MD', { font: 'chrome', align: 'center', gradient: ['red', 'magenta'] })
-say('Bot created by lua sakura', { font: 'console', align: 'center', gradient: ['red', 'magenta'] })
+say('SAKURA V2\nWhatsApp Bot MD', { font: 'chrome', align: 'center', gradient: ['red', 'magenta'] })
+say('Bot created by SYBER-DEMONS TEEAM', { font: 'console', align: 'center', gradient: ['red', 'magenta'] })
 
 var isRunning = false
 /**
