@@ -418,7 +418,7 @@ externalAdReply: {
 title: "SAKURA-MD",
 body: "Group Notifications",
 thumbnailUrl: pp,
-sourceUrl: 'https://whatsapp.com',
+sourceUrl: 'https://chat.whatsapp.com/FYPYqeucaxr4qwME8G6Tot',
 mediaType: 1,
 renderLargerThumbnail: true
 }}})
