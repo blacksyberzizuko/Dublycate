@@ -22,8 +22,8 @@ handler.all = async function (m) {
         
 		// Ini untuk command crator/owner
 		global.kontak2 = [
-         [owner[0], await this.getName(owner[0] + '@s.whatsapp.net'), 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ', 'no@gmail.com', true],
-         [owner[1], await this.getName(owner[1] + '@s.whatsapp.net'), 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ', 'luamods666@gmail.com', true], // If you want to add it, just copy this 1 line and paste it underneath and then edit it a little!
+         [owner[0], await this.getName(owner[0] + '@s.whatsapp.net'), 'MAIN DEVELOPER', 'DARK-HYPER', true],
+         [owner[1], await this.getName(owner[1] + '@s.whatsapp.net'), 'BOT DEVELOPE TEAM', 'SYBER-DEMONS_TEAM', true], // If you want to add it, just copy this 1 line and paste it underneath and then edit it a little!
         ]
         
 		// ucapan ini mah
@@ -37,7 +37,7 @@ handler.all = async function (m) {
             mediaUrl: "https://Instagram.com/luaserofc",
             mediaType: "VIDEO",
             description: "https://Instagram.com/luaserofc", 
-            title: 'Simple Bot Esm',
+            title: 'QUEEN-SAKURA_MD',
             body: me,
             thumbnailUrl: pp,
             sourceUrl: 'http://s.id/luaxyz'
@@ -105,10 +105,10 @@ handler.all = async function (m) {
                                "jpegThumbnail": fs.readFileSync('./me.png') //Gambarnye
                            },
                            "title": me, //Kasih namalu 
-                           "description": "Simple Bot Esm", 
-                           "currencyCode": "USD",
-                           "priceAmount1000": "20000000",
-                           "retailerId": "Ghost",
+                           "description": "QUEEN-SAKURA_MD", 
+                           "currencyCode": "LKR",
+                           "priceAmount1000": "500",
+                           "retailerId": "sakura",
                            "productImageCount": 1
                        },
                            "businessOwnerJid": `0@s.whatsapp.net`
@@ -138,7 +138,7 @@ handler.all = async function (m) {
                "groupInviteMessage": {
                    "groupJid": "17608914335-1625305606@g.us",
                    "inviteCode": "null",
-                   "groupName": "Iyh", 
+                   "groupName": "SAKURA-OFS", 
                    "caption": me, 
                    'jpegThumbnail': fs.readFileSync('./me.png')
                }
