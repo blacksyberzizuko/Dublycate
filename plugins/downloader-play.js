@@ -13,7 +13,7 @@ let handler = async (m, {
     args,
     usedPrefix
 }) => {
-    if (!text) throw `Use example *${usedPrefix + command}* Somewhere Only We Know`
+    if (!text) throw `Use example *${usedPrefix + command}* DONT GO BABY`
     const combinedRegex = /^(play|song)$/i;
     const isMP3 = combinedRegex.test(command);
 
@@ -31,14 +31,7 @@ let handler = async (m, {
         let dla = "Downloading audio please wait"
         let dls = "Downloading audio succes"
 
-        let captvid = `📺 *Title:* ${title ? title : 'not know'}
-⌛ *Duration:* ${timestamp ? timestamp : 'not know'}
-👀 *Views:* ${formatNumber(views) ? formatNumber(views) : 'not know'}
-📅 *Upload:* ${ago ? ago : 'not know'}
-🔗 *Link:* ${url}
-
-*_sending audio, wait a moment．．．_*
-`
+        let captvid = `*_DOWNLOADING* ${title ? title : 'not know'} | *Duration:* ${timestamp ? timestamp : 'not know'} | *Views:* ${formatNumber(views) ? formatNumber(views) : 'not know'} | *Upload:* ${ago ? ago : 'not know'} | *Link:* ${url}_*`
         let ytthumb = await (await conn.getFile(thumbnail)).data
         let msg = await generateWAMessageFromContent(m.chat, {
             extendedTextMessage: {
@@ -53,13 +46,13 @@ let handler = async (m, {
                         mediaUrl: url,
                         renderLargerThumbnail: true,
                         showAdAttribution: true,
-                        sourceId: "lua ser ofc",
+                        sourceId: "SAKURA ofc",
                         sourceType: "PDF",
                         previewType: "PDF",
                         sourceUrl: url,
                         thumbnail: ytthumb,
                         thumbnailUrl: thumbnail,
-                        title: " Y O U T U B E "
+                        title: "*☆: .｡. o≧🧚‍♀️YOUTUBE-DOWNLOADER🧚‍♀️≦o .｡.:☆*"
                     }
                 }
             }
@@ -70,7 +63,7 @@ let handler = async (m, {
 
         if (isMP3) {
             let Ytdl = await ytmp3(url)
-            let dls = "Play audio succes"
+            let dls = "UPLOADED YOUR SONG"
             let ytthumb = await (await conn.getFile(Ytdl.meta.image)).data
             let doc = {
                 audio: Ytdl.buffer,
@@ -78,7 +71,7 @@ let handler = async (m, {
                 fileName: Ytdl.meta.title,
                 contextInfo: {
                     externalAdReply: {
-                        showAdAttribution: true,
+                        showAdAttribution: false,
                         mediaType: 2,
                         mediaUrl: url,
                         title: Ytdl.meta.title,
@@ -94,8 +87,8 @@ let handler = async (m, {
         } else {
             let q = args[1] || "360p"
             let item = await ytmp4(url, q.split("p")[0])
-            if ((item.contentLength).split("MB")[0] >= limit) return m.reply(` ≡  *YT Downloader*\n\n*⚖️Size* : ${item.contentLength}\n*🎞️Quality* : ${item.quality}\n\n_The file exceeds the download limit_ *+${limit} MB*\n\n*Link:*\n${await shortUrl(item.videoUrl)}`)
-            let captvid = `🔍 *[ RESULT ]*
+            if ((item.contentLength).split("MB")[0] >= limit) return m.reply(`*YT Downloader*\n\n*⚖️Size* : ${item.contentLength}\n*🎞️Quality* : ${item.quality}\n\n_The file exceeds the download limit_ *+${limit} MB*\n\n*Link:*\n${await shortUrl(item.videoUrl)}`)
+            let captvid = `*YOUTUBR-DOWNLOADER*
 
 📷 *Image URL:* ${item.thumb.url || 'not know'}
 📚 *Title:* ${item.title || 'not know'}
@@ -106,7 +99,7 @@ let handler = async (m, {
 📦 *Content Length:* ${item.contentLength || 'not know'}
 📝 *Description:* ${item.description || 'not know'}
 `.trim()
-            let dls = "Play video succes"
+            let dls = "uploaded your video"
             let doc = {
                 video: {
                     url: item.videoUrl
