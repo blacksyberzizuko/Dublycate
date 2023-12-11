@@ -6,6 +6,7 @@ handler.before = m => {
 You stop AFK${user.afkReason ? ' after ' + user.afkReason : ''}
 During ${clockString(new Date - user.afk)}
 `.trim())
+    m.react('💋')
     user.afk = -1
     user.afkReason = ''
   }
@@ -17,7 +18,7 @@ During ${clockString(new Date - user.afk)}
     if (!afkTime || afkTime < 0) continue
     let reason = user.afkReason || ''
     m.reply(`
-Don't tag him!
+*Don't tag him!*
 He is AFK ${reason ? ' with reason ' + reason : 'no reason'}
 During ${clockString(new Date - afkTime)}
 `.trim())
