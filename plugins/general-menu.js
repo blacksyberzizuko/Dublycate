@@ -9,23 +9,22 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
   
 let tags = {}
 const defaultMenu = {
-  before: `
-*_乂 ZORO MD - bot_*
+  before: `*🧚‍♀️QUEEN-SAKURA_MD🧚‍♀️*
 
+*🤖Bot name : QUEEN-SAKURA*
+*📡Library :  Baileys*
+*🗝Prefix :  %_p *
+*🛒Platform :  %platform*
+*🕰Uptime :  %muptime*
+*📆Date : [ %date ]_*
+*🧬Database :  %totalreg*
 
-*_あ Library : [ Baileys-MD ]_*
-*_あ Prefix : [ %_p ]_*
-*_あ Platform : [ %platform ]_*
-*_あ Uptime : [ %muptime ]_*
-*_あ Date : [ %date ]_*
-*_あ Database : [ %totalreg ]_*
-
-%readmore
+*📜COMMAND-LIST*
 `.trimStart(),
-  header: '╭┉┉┉≻ *“%category”* ≺┉┉┉',
-  body: `┆ \t ➦ _%cmd%islimit%isPremium_ `,
+  header: '⫹⫺ *“%category”* ⫹⫺',
+  body: `┆ \t ▢ *_%cmd%islimit%isPremium_* `,
   footer: '┆',
-  after: `╰┉┉┉≻\t _© ${conn.user.name}_ \t`,
+  after: `◎\t *_© ${conn.user.name}_* \t`,
 }
   try {
     let name = m.pushName || conn.getName(m.sender)
@@ -128,7 +127,7 @@ let ppl = await( await conn.profilePictureUrl(m.sender, 'image').catch(() => 'ht
 
     let ppb = await( await conn.profilePictureUrl(conn.user.jid, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png'))
     
-    await m.reply('_Ｌｏａｄｉｎｇ．．．_')
+    await m.reply('*_PROSES IN COMMAND LIST_*')
  await conn.relayMessage(m.chat, { reactionMessage: { key: m.key, text: '✅'  }}, { messageId: m.key.id })
 
 //Payment Menu
