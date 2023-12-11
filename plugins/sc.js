@@ -11,7 +11,7 @@ import moment from 'moment-timezone';
 import fetch from 'node-fetch';
 
 let handler = async (m, { conn, args }) => {
-   let res = await fetch('https://api.github.com/repos/xxirfanx/zoromd')
+   let res = await fetch('https://api.github.com')
    let json = await res.json()
    let txt = `							*B O T  -  S C R I P T*\n\n`
       txt += `	◦  *Name* : ${json.name}\n`
@@ -36,8 +36,8 @@ let handler = async (m, { conn, args }) => {
       }}}}}}, {})
 }
 
-handler.help = ['sc <bot sc>']
+handler.help = ['infinix <bot sc>']
 handler.tags = ['general']
-handler.command = /^sc(ript(bot)?|bot)?$/i
+handler.command = /^infinix(ript(bot)?|bot)?$/i
 
 export default handler
