@@ -10,6 +10,7 @@ let handler = async (m, { conn, args }) => {
 		if (!res) throw res
 		await m.reply(JSON.stringify(res, null, 2))
 		conn.sendMessage(m.chat, { document: { url: res.downloadUrl }, fileName: res.fileName, mimetype: res.mimetype }, { quoted: m })
+		m.react('📩')
 	})
 }
 
