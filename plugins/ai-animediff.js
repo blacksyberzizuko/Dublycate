@@ -3,8 +3,8 @@ import fetch from "node-fetch"
 let handler = async (m, { conn, text, usedPrefix, command }) => {
          let wm = global.me
 
-        if (!text) throw `This command generates image from texts\n\n Example usage\n${ usedPrefix + command } 1girl, blush, megane, school uniform`
-        await m.reply('*Processing image*')
+        if (!text) throw `🧚‍♀️This command generates image from texts\n\n Example : ${ usedPrefix + command } HELLO WHATSAPP`
+        await m.reply('*⏳ please waite uploading your image..*')
         await conn.relayMessage(m.chat, { reactionMessage: { key: m.key, text: '⌛'  }}, { messageId: m.key.id })
         try {
         let url = `https://api.xyroinee.xyz/api/ai/animediffusion?q=${text}&apikey=${global.xyro}`
