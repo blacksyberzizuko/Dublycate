@@ -12,17 +12,24 @@ let handler = async (m, { conn }) => {
     let { name, limit, exp, lastclaim, registered, regTime, age, level } = global.DATABASE.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let username = conn.getName(who)
-    let str = `
-Name: ${username} ${registered ? '(' + name + ') ': ''}(@${who.replace(/@.+/, '')})${about ? '\nAbout: ' + about : ''}
-Number: ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
-Link: https://wa.me/${who.split`@`[0]}${registered ? '\nAge: ' + age : ''}
-XP: TOTAL ${exp} (${exp - min} / ${xp}) [${max - exp} left to levelup]
-Level: ${level}
-Limit: ${limit}
-Registered: ${registered ? 'Yes (' + new Date(regTime) + ')': 'No'}${lastclaim > 0 ? '\nLast Claim: ' + new Date(lastclaim) : ''}
+    let str = `『 𝗣𝗥𝗢𝗙𝗜𝗟𝗘-𝗜𝗡𝗙𝗢𝗥𝗠 』
+❏ Name: ${username} ${registered ? '(' + name + ') ': ''}(@${who.replace(/@.+/, '')})${about ? '\nAbout: ' + about : ''}
+
+❏ Number: ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
+
+❏ Link: https://wa.me/${who.split`@`[0]}${registered ? '\nAge: ' + age : ''}
+
+❏ XP: TOTAL ${exp} (${exp - min} / ${xp}) [${max - exp} left to levelup]
+
+❏ Level: ${level}
+
+❏ Limit: ${limit}
+
+❏ Registered: ${registered ? 'Yes (' + new Date(regTime) + ')': 'No'}${lastclaim > 0 ? '\nLast Claim: ' + new Date(lastclaim) : ''}
 `.trim()
     let mentionedJid = [who]
     conn.sendFile(m.chat, pp, 'pp.jpg', str, m, false, { contextInfo: { mentionedJid }})
+    m.react('👤')
   }
 }
 handler.help = ['profile [@user]']
