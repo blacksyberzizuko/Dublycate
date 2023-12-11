@@ -17,7 +17,7 @@ let handler = async (m, { conn }) => {
 
 ❏ Number: ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
 
-❏ Link: https://wa.me/${who.split`@`[0]}${registered ? '\nAge: ' + age : ''}
+❏ Link: https://wa.me/${who.split`@`[0]}${registered ? '\n❏ Age: ' + age : ''}
 
 ❏ XP: TOTAL ${exp} (${exp - min} / ${xp}) [${max - exp} left to levelup]
 
@@ -25,7 +25,7 @@ let handler = async (m, { conn }) => {
 
 ❏ Limit: ${limit}
 
-❏ Registered: ${registered ? 'Yes (' + new Date(regTime) + ')': 'No'}${lastclaim > 0 ? '\nLast Claim: ' + new Date(lastclaim) : ''}
+❏ Registered: ${registered ? 'Yes (' + new Date(regTime) + ')': 'No'}${lastclaim > 0 ? '\n❏ Last Claim: ' + new Date(lastclaim) : ''}
 `.trim()
     let mentionedJid = [who]
     conn.sendFile(m.chat, pp, 'pp.jpg', str, m, false, { contextInfo: { mentionedJid }})
