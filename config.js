@@ -4,7 +4,7 @@ import { watchFile, unwatchFile, readFileSync } from 'fs'
 
 global.owner = 
  [
-  ['+91 6235 050 956', '𝖑𝖚𝖆 𝖘𝖊𝖗 𝖔𝖋𝖈', true]
+  ['+94770378874', 'DARK-LRGRND-HYPER', true]
 ]
 // Put your number here
 // [number, he creator/owner?, he developer?]
@@ -35,21 +35,21 @@ global.APIKeys = { // APIKey Here
 ]
 
 // Sticker WM
-global.packname = `「 Cʀᴇᴀᴛᴇᴅ Bʏ 𝖑𝖚𝖆 𝖘𝖊𝖗 𝖔𝖋𝖈 」`
-global.author = ''
+global.packname = `「QUEEN-SAKURA-MD」`
+global.author = 'DLH'
 global.thumb = readFileSync('./me.png')
 global.thumb2 = readFileSync('./me2.jpeg')
 global.multiplier = 69 // The higher, The harder levelup
 
 //Text here
-global.me = 'Cʀᴇᴀᴛᴇᴅ Bʏ 𝖑𝖚𝖆 𝖘𝖊𝖗 𝖔𝖋𝖈 - 2023'
-global.bott = 'zoro md'
-global.nomorown = '916235050956'
+global.me = 'QUEEN-SAKURA-MD 2023-2024'
+global.bott = 'QUEEN-SAKURA V2'
+global.nomorown = '94770378874'
 // owner put this creator.js
 global.str = '-------------'
 global.l = '「'
 global.r = '」'
-global.wait = '```「▰▰▰▱▱▱▱▱▱▱」ʟ ᴏ ᴀ ᴅ ɪ ɴ ɢ...```'
+global.wait = '```ʟ ᴏ ᴀ ᴅ ɪ ɴ ɢ...```'
 global.eror = '```404 ᴇʀʀᴏʀ```'
 
 global.rpg = {
