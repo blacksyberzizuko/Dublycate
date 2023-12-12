@@ -1,48 +1,55 @@
-import fetch from 'node-fetch'
-import { youtubedl } from '@bochilteam/scraper-sosmed'
+let limit = 80
+let fetch = require('node-fetch')
+const { youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
+let handler = async (m, { conn, args, isPrems, isOwner }) => {
+  if (!args || !args[0]) throw 'Uhm... urlnya mana?'
+  m.react('🎧')
+  let chat = global.db.data.chats[m.chat]
+  const isY = /y(es)/gi.test(args[1])
+  const { thumbnail, audio: _audio, title } = await youtubedlv2(args[0]).catch(async _ => await youtubedl(args[0])).catch(async _ => await youtubedlv3(args[0]))
+  const limitedSize = (isPrems || isOwner ? 99 : limit) * 1024
+  let audio, source, res, link, lastError, isLimit
+  for (let i in _audio) {
+    try {
+      audio = _audio[i]
+      isLimit = limitedSize < audio.fileSize
+      if (isLimit) continue
+      link = await audio.download()
+      if (link) res = await fetch(link)
+      isLimit = res?.headers.get('content-length') && parseInt(res.headers.get('content-length')) < limitedSize
+      if (isLimit) continue
+      if (res) source = await res.arrayBuffer()
+      if (source instanceof ArrayBuffer) break
+    } catch (e) {
+      audio = link = source = null
+      lastError = e
+    }
+  }
+  if ((!(source instanceof ArrayBuffer) || !link || !res.ok) && !isLimit) throw 'Error: ' + (lastError || 'Can\'t download audio')
+  if (!isY && !isLimit) await conn.sendFile(m.chat, thumbnail, 'thumbnail.jpg', `
+*YOUTUBE*
 
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-	if (!args[0]) throw `Example: ${usedPrefix + command} https://youtu.be/S1--lhvwLsc`
-	if (!args[0].match(new RegExp(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed|shorts)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\_-]+)/, 'gi'))) return m.reply(`Invalid Youtube URL.`)
-	try {
-		let anu = await youtubedl(args[0])
-		let data = anu.audio[Object.keys(anu.audio)[0]]
-		let url = await data.download()
-		if (data.fileSize > 400000) return m.reply(`Filesize: ${data.fileSizeH}\nUnable to send, maximum file size is 400 MB`)
-		await conn.sendFAudio(m.chat, { [/mp3/g.test(command) ? 'document' : 'audio']: { url: url }, mimetype: 'audio/mpeg', fileName: `${anu.title}.mp3` }, m, anu.title, anu.thumbnail, args[0])
-	} catch (e) {
-		console.log(e)
-		try {
-			let res = await fetch(`https://api.lolhuman.xyz/api/ytaudio?apikey=${apilol}&url=${args[0]}`)
-			let anu = await res.json()
-			anu = anu.result
-			let vsize = anu.link.size.slice(-2)
-			if (vsize == "GB") return m.reply(`No brain.\nWhere can I send videos ${anu.link.size}`)
-			if (!somematch(['kB','KB'], vsize) && parseInt(anu.link.size.replace(" MB", "")) > 400) return m.reply(`Filesize: ${anu.link.size}\nUnable to send, maximum file size is 400 MB`)
-			if (!anu.link.link) throw new Error('Error')
-			await conn.sendFAudio(m.chat, { [/mp3/g.test(command) ? 'document' : 'audio']: { url: anu.link.link }, mimetype: 'audio/mpeg', fileName: `${anu.title}.mp3` }, m, anu.title, anu.thumbnail, args[0])
-		} catch (e) {
-			console.log(e)
-			try {
-				let res = await fetch(`https://api.lolhuman.xyz/api/ytaudio2?apikey=${apilol}&url=${args[0]}`)
-				let anu = await res.json()
-				anu = anu.result
-				let vsize = anu.size.slice(-2)
-				if (vsize == "GB") return m.reply(`No brain.\nWhere can I send videos ${anu.size}`)
-				if (!somematch(['kB','KB'], vsize) && parseInt(anu.size.replace(" MB", "")) > 400) return m.reply(`Filesize: ${anu.size}\nUnable to send, maximum file size is 400 MB`)
-				if (!anu.link) throw new Error('Error')
-				await conn.sendFAudio(m.chat, { [/mp3/g.test(command) ? 'document' : 'audio']: { url: anu.link }, mimetype: 'audio/mpeg', fileName: `${anu.title}.mp3` }, m, anu.title, anu.thumbnail, args[0])
-			} catch (e) {
-				console.log(e)
-				throw `Invalid Youtube URL / there is an error.`
-			}
-		}
-	}
+*Title:* ${title}
+*Type:* mp3
+*Filesize:* ${audio.fileSizeH}
+
+*L O A D I N G. . .*
+`.trim(), m) // title + '.mp3',
+  if (!isLimit) await conn.sendFile(m.chat, source, title + 'audio/mpeg', `
+*YOUTUBE*
+
+*Title:* ${title}
+*Type:* mp3
+*Filesize:* ${audio.fileSizeH}
+
+*L O A D I N G. . .*
+`.trim(), m, null, {
+    asDocument: chat.useDocument
+  })
 }
-
-handler.help = ['yta <url>']
+handler.help = ['ytmp3 <url>']
 handler.tags = ['downloader']
-handler.command = /^(yt(a(udio)?|mp3))$/i
+handler.command = /^(yt(mp3(udio)?|mp3))$/i
 
 export default handler
 
