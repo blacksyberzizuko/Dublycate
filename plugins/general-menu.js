@@ -20,7 +20,7 @@ const defaultMenu = {
 ┃┃ *🗝Prefix :  %_p*
 ┃┃ *🛒Platform :  %platform*
 ┃┃ *🕰Uptime :  %muptime*
-┃┃ *📆Date :  %date *
+┃┃ *📆Date :  %date*
 ┃┃ *🧬Database :  %totalreg*
 ┃┃ *🧑‍💻Developed by : Syber-Demons_Team*
 ┃┗╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍❏
@@ -30,8 +30,8 @@ const defaultMenu = {
   ┗━━━━━━━━━━━━━━━✘
 `.trimStart(),
   header: '▢   *⫹⫺ _%category_ ⫹⫺*',
-  body: `┃ \t ▢ *_%cmd%islimit%isPremium_* `,
-  footer: '┇┇',
+  body: `┃⫶ \t ▢ *_%cmd%islimit%isPremium_* `,
+  footer: '┇⩶⩶⩶⩶⩶⩶⩶⩶⫹⫺',
   after: `◎\t *_ ${conn.user.name}_* \t`,
 }
   try {
