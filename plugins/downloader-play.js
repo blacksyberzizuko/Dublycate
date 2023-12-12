@@ -1,69 +1,19 @@
-let ytdl = require('ytdl-core');
-let fs = require('fs');
-let ffmpeg = require('fluent-ffmpeg');
-let search = require ('yt-search');
-
-let handler = async (m, { conn, text }) => {
-  if (!text) return m.reply('*example*: .play eula song');
-  try {
-    let results = await search(text);
-    let videoId = results.videos[0].videoId;
-    let info = await ytdl.getInfo(videoId);
-    let title = info.videoDetails.title.replace(/[^\w\s]/gi, '');
-    let thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
-    let url = info.videoDetails.video_url;
-    let duration = parseInt(info.videoDetails.lengthSeconds);
-    let uploadDate = new Date(info.videoDetails.publishDate).toLocaleDateString();
-    let views = info.videoDetails.viewCount;
-    let minutes = Math.floor(duration / 60);
-    let description = results.videos[0].description;
-    let seconds = duration % 60;
-    let durationText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;       
-    let audio = ytdl(videoId, { quality: 'highestaudio' });
-    let inputFilePath = 'tmp/' + title + '.webm';
-    let outputFilePath = 'tmp/' + title + '.mp3';
-    let viewsFormatted = formatViews(views);
-    let infoText = `◦ *Title*: ${title}\n◦ *Duration*: ${durationText}\n◦ *Upload*: ${uploadDate}\n◦ *Views*: ${viewsFormatted}\n◦ *ID*: ${videoId}\n◦ *Description*: ${description}
-  `;
-    const pesan = conn.relayMessage(m.chat, {
-                extendedTextMessage:{
-                text: infoText, 
-                contextInfo: {
-                     externalAdReply: {
-                        title: wm,
-                        body: "",
-                        mediaType: 1,
-                        previewType: 0,
-                        renderLargerThumbnail: true,
-                        thumbnailUrl: thumbnailUrl,
-                        sourceUrl: "https://youtube.com"
-                    }
-                }, mentions: [m.sender]
-}}, {});
-
-    audio.pipe(fs.createWriteStream(inputFilePath)).on('finish', async () => {
-      ffmpeg(inputFilePath)
-        .toFormat('mp3')
-        .on('end', async () => {
-          let thumbnailData = await conn.getFile(thumbnailUrl);
-          let buffer = fs.readFileSync(outputFilePath);
-          conn.sendFile(m.chat, buffer, `${title}.mp3`, '', m);
-          fs.unlinkSync(inputFilePath);
-          fs.unlinkSync(outputFilePath);
-        })
-        .on('error', (err) => {
-          console.log(err);
-          m.reply(`There was an error converting the audio: ${err.message}`);
-          fs.unlinkSync(inputFilePath);
-          fs.unlinkSync(outputFilePath);
-        })
-        .save(outputFilePath);
-    });
-  } catch (e) {
-    console.log(e);
-    m.reply(`An error occurred while searching for the song: ${e.message}`);
-  }
-};
+import yts from 'yt-search'
+let handler = async (m, { conn, command, text, usedPrefix }) => {
+	
+	if (!text) throw `🧚‍♂️PLEASE ENTER THE VIDEO/AUDIO NAME\n 🔍EXAMPLE *${usedPrefix + command}* I AM RIDER..`
+	let res = await yts(text)
+	let vid = res.videos[0]
+	if (!vid) throw `🧚‍♂️ *VIDEO NOT FOUND !!!*`
+	let { title, description, thumbnail, videoId, timestamp, views, ago, url } = vid
+	//const url = 'https://www.youtube.com/watch?v=' + videoId
+	m.react('🎧')
+	let play = `*_DOWNLOADING : ${title} | UPLOADED ON : ${ago} | TIME DURATION : ${timestamp} | VIEWS : ${views}_*`
+ await conn.sendButton(m.chat, play, fgig, thumbnail, [
+    ['🎶 MP3', `${usedPrefix}fgmp3 ${url}`],
+    ['🎥 MP4', `${usedPrefix}fgmp4 ${url}`]
+  ], m, rpl)
+}
 
 handler.help = ["play"].map(v => v + " <search>")
 handler.tags = ['downloader']
