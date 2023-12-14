@@ -7,9 +7,9 @@ let stdout = execSync('git pull' + (m.fromMe && text ? ' ' + text : ''))
 //require('fs').readdirSync('plugins').map(v=>global.reload('', v))
 conn.reply(m.chat, stdout.toString(), m)
 }}
-handler.help = ['update']
+handler.help = ['update','now']
 handler.tags = ['owner']
-handler.command = ['update', 'actualizar', 'fix', 'fixed'] 
+handler.command = /^update(now)?$/i
 
 
 export default handler
