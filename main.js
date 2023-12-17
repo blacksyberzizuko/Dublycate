@@ -132,7 +132,7 @@ const connectionOptions = {
     creds: state.creds,
     keys: makeCacheableSignalKeyStore(state.keys, Pino({level: 'silent'})),
   },
-  browser: ['Chrome (macOS)'],
+  browser: ['QUEEN-SAKURA (V2 VERSION)'],
   version,
   downloadHistory: false,
   defaultQueryTimeoutMs: undefined,
