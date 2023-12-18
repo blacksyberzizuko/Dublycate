@@ -15,7 +15,7 @@ const defaultMenu = {
 ┣╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍❏
 ┃┏╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍┛
 ┃┃ *🤖Bot name : QUEEN-SAKURA*
-┃┃ *User name : ${conn.user.name}*
+┃┃ *🤹‍♂️User name : ${conn.user.name}*
 ┃┃ *📡Library :  Baileys*
 ┃┃ *🗝Prefix :  %_p*
 ┃┃ *🛒Platform :  %platform*
@@ -26,13 +26,13 @@ const defaultMenu = {
 ┃┗╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍❏
 ┗╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍❏
   ┏━━━━━━━━━━━━━━━✘
-  ┃ *📜COMMAND-LIST*
+  ┃  *📜COMMAND-LIST*
   ┗━━━━━━━━━━━━━━━✘
 `.trimStart(),
-  header: '▢   *⫹⫺ _%category_ ⫹⫺*',
-  body: `┃⫶ \t ▢ *_%cmd%islimit%isPremium_* `,
+  header: '◈  *『 _%category_ 』*',
+  body: `┃⫶ \t『◈』 *_%cmd%islimit%isPremium_* `,
   footer: '┇⩶⩶⩶⩶⩶⩶⩶⩶⫹⫺',
-  after: `◎\t *_ ${conn.user.name}_* \t`,
+  after: `●\t *_ ${conn.user.name}_* \t`,
 }
   try {
     let name = m.pushName || conn.getName(m.sender)
@@ -136,7 +136,7 @@ let ppl = await( await conn.profilePictureUrl(m.sender, 'image').catch(() => 'ht
     let ppb = await( await conn.profilePictureUrl(conn.user.jid, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png'))
     
     await m.reply('*_PROSES IN COMMAND LIST_*')
- await conn.relayMessage(m.chat, { reactionMessage: { key: m.key, text: '✅'  }}, { messageId: m.key.id })
+ await conn.relayMessage(m.chat, { reactionMessage: { key: m.key, text: '🧚‍♂️'  }}, { messageId: m.key.id })
 
 //Payment Menu
  /*await conn.relayMessage(m.chat,  {
