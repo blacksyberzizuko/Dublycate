@@ -4,7 +4,7 @@ import yts from "yt-search"
 import {
     generateWAMessageFromContent
 } from "@adiwajshing/baileys"
-
+await m.reply('*🎧PLEASE WAIT DOWNLOADING YOUR SONG....*')
 let limit = 100
 let handler = async (m, {
     conn,
@@ -31,17 +31,20 @@ let handler = async (m, {
         let dla = "ＤＯＷＮＬＯＡＤＩＮＧ ＹＯＵＲ ＳＯＮＧ"
         let dls = "ＤＯＷＮＬＯＡＤＥＤ ＹＯＵＲ ＳＯＮＧ"
         m.react('🎧')
-        let captvid = `『❊』 *𝐓𝐈𝐓𝐋𝐄:* ${title ? title : 'not know'}
-	
-『❊』 𝐃𝐔𝐑𝐀𝐓𝐈𝐎𝐍: ${timestamp ? timestamp : 'not know'}
-
-『❊』 𝐕𝐈𝐄𝐖𝐒: ${formatNumber(views) ? formatNumber(views) : 'not know'}
-
-『❊』 𝐔𝐏𝐋𝐎𝐀𝐃 𝐎𝐍: ${ago ? ago : 'not know'}
-
-『❊』 𝐋𝐈𝐍𝐊: ${url}
-
-『 🧚‍♂️𝐐𝐔𝐄𝐄𝐍-𝐒𝐀𝐊𝐔𝐑𝐀_𝐌𝐃_𝐕2 』
+        let captvid = `╭╼╼╼╼╼『 𝐐𝐔𝐄𝐄𝐍-𝐒𝐀𝐊𝐔𝐑𝐀_𝐘𝐎𝐔𝐓𝐔𝐁𝐄 』╼╼╼❏
+╿╿ 📝𝐓𝐈𝐓𝐋𝐄: ${title ? title : 'not know'}
+╿╿	
+╿╿ 🕗𝐃𝐔𝐑𝐀𝐓𝐈𝐎𝐍: ${timestamp ? timestamp : 'not know'}
+╿╿
+╿╿ 👀𝐕𝐈𝐄𝐖𝐒: ${formatNumber(views) ? formatNumber(views) : 'not know'}
+╿╿
+╿╿ 📅𝐔𝐏𝐋𝐎𝐀𝐃 𝐎𝐍: ${ago ? ago : 'not know'}
+╿╿
+╿╿ 🔗𝐋𝐈𝐍𝐊: ${url}
+╰╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼❏
+╭╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼❏
+╿『 🧚‍♂️𝐐𝐔𝐄𝐄𝐍-𝐒𝐀𝐊𝐔𝐑𝐀_𝐌𝐃_𝐕2 』
+╰╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼❏
 `
         let ytthumb = await (await conn.getFile(thumbnail)).data
         let msg = await generateWAMessageFromContent(m.chat, {
