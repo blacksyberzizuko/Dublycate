@@ -29,7 +29,7 @@ const defaultMenu = {
   ┃  *📜COMMAND-LIST*
   ┗━━━━━━━━━━━━━━━✘
 `.trimStart(),
-  header: '◈  *『 _%category_ 』*',
+  header: '*╭╼╼╼╼╼╼╼『 _%category_ 』╼╼╼╼╮*',
   body: `┃⫶ \t『◈』 *_%cmd%islimit%isPremium_* `,
   footer: '┇⩶⩶⩶⩶⩶⩶⩶⩶⫹⫺',
   after: `●\t *_ ${conn.user.name}_* \t`,
