@@ -30,7 +30,7 @@ const defaultMenu = {
   ┗━━━━━━━━━━━━━━━✘
 `.trimStart(),
   header: '*╭╼╼╼╼╼╼╼『 _%category_ 』╼╼╼╼❏*',
-  body: `╿╿ \t ❏  *_%cmd%_* `,
+  body: `╿╿ \t ❏  *_%cmd_* `,
   footer: '*╰╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼❏*',
   after: `●\t *_ ${conn.user.name}_* \t`,
 }
@@ -135,7 +135,7 @@ let ppl = await( await conn.profilePictureUrl(m.sender, 'image').catch(() => 'ht
 
     let ppb = await( await conn.profilePictureUrl(conn.user.jid, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png'))
     
-    await m.reply('*_PROSES IN COMMAND LIST_*')
+    await m.reply('*📜PROSES IN COMMAND LIST....*')
  await conn.relayMessage(m.chat, { reactionMessage: { key: m.key, text: '🧚‍♂️'  }}, { messageId: m.key.id })
 
 //Payment Menu
