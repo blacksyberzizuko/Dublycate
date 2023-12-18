@@ -38,9 +38,9 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   if (!isLimit) await conn.sendFile(m.chat, source, title + 'audio/mpeg', `
 *YOUTUBE*
 
-*Title:* ${title}
-*Type:* mp3
-*Filesize:* ${audio.fileSizeH}
+*📝Title:* ${title}
+*📂Type:* mp3
+*⚖️Filesize:* ${audio.fileSizeH}
 
 *L O A D I N G. . .*
 `.trim(), m, null, {
