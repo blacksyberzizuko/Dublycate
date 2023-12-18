@@ -31,16 +31,16 @@
         "MD",
         "baileys-md"
     ],
-    "homepage": "https://github.com/xxirfanx/zoromd",
+    "homepage": "https://github.com/DarkLegendHyper/erorr-sakura-old-1",
     "author": {
         "name": "LUA SER OFC"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/xxirfanx/zoromd.git"
+        "url": "git+https://github.com/DarkLegendHyper/erorr-sakura-old-1.git"
     },
     "bugs": {
-        "url": "https://github.com/xxirfanx/zoromd/issues"
+        "url": "https://github.com/DarkLegendHyper/erorr-sakura-old-1/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
