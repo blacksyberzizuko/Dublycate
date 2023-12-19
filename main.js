@@ -36,6 +36,14 @@ import {
 import { Low } from 'lowdb';
 import store from './lib/store.js';
 import { JSONFile } from "lowdb/node"
+import { JSONFile } from './src/audio.json'
+for (let Sakura of botaudio) {
+      if (budy === Sakura) {
+        result = fs.readFileSync(`./sakura_v2/audio/${Sakura}.mp3`)
+        m.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
+      }
+    }
+
 /* import {
   mongoDB,
   mongoDBV2
