@@ -1,5 +1,5 @@
 {
-    "name": "zoromd",
+    "name": "Queen-sakura_MD",
     "version": "4.8.0",
     "description": "Simple WhatsApp Bot MD With ESM Module",
     "main": "index.js",
@@ -16,8 +16,8 @@
     },
     "keywords": [
         "termux-whatsapp-bot",
-        "zoromd",
-        "zoro-md",
+        "Queen-sakura",
+        "Queen-sakura-md",
         "whatsapp-bot",
         "whatsapp",
         "wa-md",
@@ -33,7 +33,7 @@
     ],
     "homepage": "https://github.com/DarkLegendHyper/erorr-sakura-old-1",
     "author": {
-        "name": "LUA SER OFC"
+        "name": "Dark-Hyper"
     },
     "repository": {
         "type": "git",
