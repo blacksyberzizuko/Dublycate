@@ -15,14 +15,6 @@ const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(function (
     clearTimeout(this)
     resolve()
 }, ms))
-
-for (let anju of kaiaudio) {
-      if (budy === anju) {
-        result = fs.readFileSync(`./sakura_v2/audio/${anju}.mp3`)
-        A17.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
-      }
-}
-vien = JSON.parse(fs.readFileSync('./src/audio.json'))
 /**
  * Handle messages upsert
  * @param {import("@adiwajshing/baileys").BaileysEventMap<unknown>["messages.upsert"]} groupsUpdate 
