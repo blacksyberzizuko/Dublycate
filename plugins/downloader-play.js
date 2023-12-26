@@ -4,7 +4,6 @@ import yts from "yt-search"
 import {
     generateWAMessageFromContent
 } from "@adiwajshing/baileys"
-await m.reply('*🎧PLEASE WAIT DOWNLOADING YOUR SONG....*')
 let limit = 100
 let handler = async (m, {
     conn,
