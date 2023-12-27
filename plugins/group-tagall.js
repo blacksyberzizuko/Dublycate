@@ -2,6 +2,7 @@ let handler = async (m, { conn, text, participants }) => {
 	let q = m.quoted ? m.quoted : m
 	let mime = (q.msg || q).mimetype || q.mediaType || q.mtype || ''
 	let teks = ` 『 𝗧𝗔𝗚 𝗕𝗬 𝗤𝗨𝗘𝗘𝗡-𝗦𝗔𝗞𝗨𝗥𝗔 』\n╭╼╼╼╼╼╼╼╼╼╼╼❏\n*💬Massage* : ${text ? text : m.quoted?.text ? m.quoted.text : m.quoted?.caption ? m.quoted.caption : m.quoted?.description ? m.quoted.description : 'Nothing'}\n╰╼╼╼╼╼╼╼╼╼❏\n`
+	m.react('🔖')
 	teks += `╭╼╼╼╼╼╼╼╼╼╼╼❏\n`
 	for (let mem of participants) {
 		teks += `┃┇ 📍 @${mem.id.split('@')[0]}\n`
