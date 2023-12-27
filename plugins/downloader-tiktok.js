@@ -5,10 +5,11 @@ let handler = async (m, { conn, text, args, usedPrefix, command}) => {
 if (!args[0]) throw `Enter the link of the video Tiktok`
 if (!args[0].match(/tiktok/gi)) throw `Verify that the link is from tiktok`
 let old = new Date()
-let txt = `∘  *time duration* : ${((new Date - old) * 1)} ms`
+m.react('🕗')  
+let txt = `╭╼╼╼╼『 𝗤𝗨𝗘𝗘𝗡-𝗦𝗔𝗞𝗨𝗥𝗔_𝗧𝗜𝗞𝗧𝗢𝗞 』╼╼╼❏\n╿ *🔍time duration* : ${((new Date - old) * 1)} ms\n╰╼╼╼╼╼╼╼╼╼╼╼╼╼╼❏`
 conn.reply(m.chat, global.wait, m, {
 contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, 
-title: '📤| downloads By QUEEN-SAKURA',
+title: '🧚‍♂️| downloads By QUEEN-SAKURA',
 body: me,
 previewType: 0, thumbnail: thumb2, jpegThumbnail: thumb,
 sourceUrl: 'https://github.com/DarkLegendHyper' }}})
