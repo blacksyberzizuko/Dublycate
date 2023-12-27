@@ -6,7 +6,7 @@ let handler = async (m, { conn, text, participants }) => {
 	for (let mem of participants) {
 		teks += `┃┇ 📍 @${mem.id.split('@')[0]}\n`
 	}
-	teks += `╰╼╼╼╼╼╼╼╼╼╼╼❏`
+	teks += `╰╼╼╼╼╼╼╼╼╼╼╼❏\n『 🧚‍♂️Qᴜᴇᴇɴ-ꜱᴀᴋᴜʀᴀ_ᴍᴅ_ᴠ2 ᴠᴇʀꜱɪᴏɴ 』`
 	if (/video|image|viewOnce/g.test(mime) && !/webp/g.test(mime)) {
 		let media = await q.download?.()
 		await conn.sendFile(m.chat, media, '', teks, null, false, { mentions: participants.map(a => a.id), quoted: m })
