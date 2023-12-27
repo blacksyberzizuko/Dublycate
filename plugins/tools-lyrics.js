@@ -26,37 +26,39 @@ let handler = async (m, {
 
     try {
         let bocil = await lyrics(text)
-        let bocap = `*乂 Title 乂*
+        let bocap = `╭╼╼╼╼『 𝗤𝗨𝗘𝗘𝗡-𝗦𝗔𝗞𝗨𝗥𝗔_𝗠𝗗 』╼╼╼❏
+*🔖Title*
 ${bocil.title ? bocil.title : nothing}
 
-*乂 lyrics 乂*
+*📝lyrics*
 ${bocil.lyrics ? bocil.lyrics : nothing}
 
-*乂 Singer 乂*
+*🧑‍🎤Singer*
 ${bocil.author ? bocil.author : nothing}
 
-*乂 Url 乂*
+*🔗Url*
 ${bocil.link ? bocil.link : nothing}
 
-_By zoro bot ._
+®『 🧚‍♂️Qᴜᴇᴇɴ-ꜱᴀᴋᴜʀᴀ_ᴍᴅ_ᴠ2 』
 `
         await m.reply(bocap)
     } catch (e) {
         try {
             let jenius = (await song[0])
-            let albert = `*乂 Title 乂*
+            let albert = `╭╼╼╼╼『 𝗤𝗨𝗘𝗘𝗡-𝗦𝗔𝗞𝗨𝗥𝗔_𝗠𝗗 』╼╼╼❏
+*🔖Title*
 ${jenius.title ? jenius.title : nothing}
 
-*乂 Lyrics 乂*
+*📝Lyrics*
 ${await getLyrics(jenius.url)}
 
-*乂 Singer 乂*
+*🧑‍🎤Singer*
 ${await(jenius.artist).name ? await(jenius.artist).name : nothing}
 
-*乂 Url 乂*
+*🔗Url*
 ${jenius.url ? jenius.url : nothing}
 
-_By zoro bot_
+® 『 🧚‍♂️𝐐𝐔𝐄𝐄𝐍-𝐒𝐀𝐊𝐔𝐑𝐀_𝐌𝐃_𝐕2 』
 `
             await m.reply(albert)
         } catch (e) {
