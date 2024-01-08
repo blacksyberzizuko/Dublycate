@@ -1,7 +1,4 @@
-let handler = async ( m ) => {
 let handler = async(m, { conn, text, usedPrefix, command }) => {
-
-    // Sound
     let name = m.pushName || conn.getName(m.sender)
     var vn = "https://raw.githubusercontent.com/blacksyberzizuko/Suneth/master/Assets/audio/Sad.mp3"
     let url = "https://github.com/DarkLegendHyper/QUEEN_SAKURA-MD_V0.0.1"
@@ -17,11 +14,8 @@ let handler = async(m, { conn, text, usedPrefix, command }) => {
         waveform:  [100, 0, 100, 0, 100, 0, 100],
         fileName: "sakura",        }}
       };
-    
       await conn.sendMessage(m.chat, doc, { quoted: con });
-    
     }
-    
   m.reply('*HELLO USER I AM QUEEN-SAKURA_MD*')
   m.react('👋')
 }
