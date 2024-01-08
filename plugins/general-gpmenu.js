@@ -13,7 +13,7 @@ let handler = async (m, { conn }) => {
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let username = conn.getName(who)
     let str = `°•°___✘『 𝗚𝗥𝗢𝗨𝗣-𝗠𝗘𝗡𝗨 』✘___°•°
-▢ *USER* : ${username} ${registered ? '(' + name + ') ': ''}(@${who.replace(/@.+/, '')})
+🤝 *USER* : ${username} ${registered ? '(' + name + ') ': ''}(@${who.replace(/@.+/, '')})
 
 ╭━━━━━━━━━━━━━━━━━━━━━━⦁
 ┃🐍 *CYBER-DEMONS_TEAM* 🐍
