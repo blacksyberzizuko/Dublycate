@@ -59,9 +59,9 @@ conn.sendFile(m.chat, vid.thumbnail, 'play', play, m, null, rpig)
 
 
 
-if (size.split('MB')[0] >= limit) return m.reply(` ≡  *FG YTDL*\n\n▢ *⚖️Peso* : ${size}\n▢ *🎞️Calidad* : ${q}\n\n▢ _El archivo supera el límite de descarga_ *+${limit} MB*`) 
+if (size.split('MB')[0] >= limit) return m.reply(` ≡  *FG YTDL*\n\n▢ *⚖️Peso* : ${data.fileSizeH}\n▢ *🎞️Calidad* : ${data.quality}\n\n▢ _El archivo supera el límite de descarga_ *+ MB*`) 
 
-if (size.includes('GB')) return m.reply(` ≡  *FG YTDL*\n\n▢ *⚖️Peso* : ${size}\n▢ *🎞️Calidad* : ${q}\n\n▢ _El archivo supera el límite de descarga_ *+${limit} MB*`)   
+if (size.includes('GB')) return m.reply(` ≡  *FG YTDL*\n\n▢ *⚖️Peso* : ${data.fileSizeH}\n▢ *🎞️Calidad* : ${data.quality}\n\n▢ _El archivo supera el límite de descarga_ *+${limit} MB*`)   
 
 	  conn.sendFile(m.chat, dl_url, title + '.mp' + (3 + /vid$/.test(command)), `
 
@@ -79,7 +79,7 @@ if (size.includes('GB')) return m.reply(` ≡  *FG YTDL*\n\n▢ *⚖️Peso* : $
 
     } catch {
 
-		m.reply(`Error: intenta de nuevo`)
+		m.reply(`*Error : pakda බලන්නේ දෙන්න බෑ කියුවනම් බෑතමා  වැරැද්දක් තියේ හදාගෙන වරෙන් ඊටපස්සේ දෙන්නම් Video එක 😈*`)
 
     }
 
@@ -87,9 +87,9 @@ if (size.includes('GB')) return m.reply(` ≡  *FG YTDL*\n\n▢ *⚖️Peso* : $
 
 }
 
-handler.help = ['video']
+handler.help = ['ytv <url>']
 handler.tags = ['downloader']
-handler.command = /^(yt(v(video)?|play2))$/i
+handler.command = /^(yt(v(ideo)?|mp4))$/i
 
 export default handler
 
