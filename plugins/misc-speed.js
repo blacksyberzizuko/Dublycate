@@ -12,6 +12,8 @@ let format = sizeFormatter({
 
 let handler = async (m, { conn }) => {
 	let groups
+	await conn.reply(m.chat, global.wait, m)
+	m.react('🎯')
 	try { groups = Object.values(await conn.groupFetchAllParticipating()) }
 	catch { return }
 	let chats = Object.entries(conn.chats).filter(([id, data]) => id && data.isChats)
