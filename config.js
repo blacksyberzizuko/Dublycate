@@ -49,8 +49,8 @@ global.nomorown = '94770378874'
 global.str = '-------------'
 global.l = '「'
 global.r = '」'
-global.wait = '```ʟ ᴏ ᴀ ᴅ ɪ ɴ ɢ...```'
-global.eror = '```404 ᴇʀʀᴏʀ```'
+global.wait = '```*🕗please wait Processing Your request...*```'
+global.eror = '```Error to main saver..```'
 
 global.rpg = {
   emoticon(string) {
