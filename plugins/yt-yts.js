@@ -7,13 +7,16 @@ let handler = async (m, {conn, text }) => {
   let results = await yts(text)
   let tes = results.all
   let teks = results.all.map(v => {
+    m.react('🔍')
     switch (v.type) {
       case 'video': return `
- *_${v.title}_*
- 🫐 *_Link :_* ${v.url}
- 🕒 *_Duration :_* ${v.timestamp}
- 📥 *_Uploaded :_* ${v.ago}
- 👁 *_Views :_* ${v.views}`}}).filter(v => v).join('\n\n◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦\n\n')
+╭╼╼❮ＹＯＵＴＵＢＥ-ＳＥＡＲＣＨ❯╼╼❑    
+╿ *_${v.title}_*
+╿ *🔗Link :* ${v.url}
+╿ *🕒Duration :* ${v.timestamp}
+╿ *📥Uploaded :* ${v.ago}
+╿ *👁️‍🗨️Views :* ${v.views}
+╰╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼❑`}}).filter(v => v).join('\n\n◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦\n\n')
   conn.sendFile(m.chat, tes[0].thumbnail, 'yts.jpeg', teks, m)
 }
 
