@@ -10,12 +10,13 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 		let url = await data.download()
 		if (data.fileSize > 400000) return m.reply(`Filesize: ${data.fileSizeH}\nUnable to send, maximum file size is 400 MB`)
 		let txt = `DOWNLOADING : *${anu.title}*\n\n`
-		txt += `╭╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼❑\n `
+		txt += `╭╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼❑\n`
 		txt += `╿ *👁️‍🗨️Watch : ${args[0]}*\n`
 		txt += `╿ *🎞️Quality : ${data.quality}*\n`
 		txt += `╿ *⚖️Size : ${data.fileSizeH}*\n`
 		txt += `╿ *🧑‍💻DEVELOPED BY SYBER-DEMONS ™*\n`
 		txt += `╰╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼❑`
+		m.react('🎥')
 		await conn.sendMsg(m.chat, { video: { url: url }, caption: txt }, { quoted: m })
 	} catch (e) {
 		console.log(e)
