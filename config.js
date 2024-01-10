@@ -49,7 +49,7 @@ global.nomorown = '94770378874'
 global.str = '-------------'
 global.l = '「'
 global.r = '」'
-global.wait = '```*🕗please wait Processing Your request...*```'
+global.wait = '```🕗please wait Processing Your request...```'
 global.eror = '```Error to main saver..```'
 
 global.rpg = {
