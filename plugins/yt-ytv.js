@@ -5,6 +5,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 	if (!(args[0] || '').match(new RegExp(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed|shorts)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\_-]+)/, 'gi'))) return m.reply(`Invalid Youtube URL.`)
 	try {
 		let anu = await youtubedl(args[0])
+		await conn.reply(m.chat, global.wait, m)
 		let list = Object.keys(anu.video).toString()
 		let data = anu.video[`${list.includes('36') ? '360p' : list.includes('24') ? '240p' : '144p'}`]
 		let url = await data.download()
