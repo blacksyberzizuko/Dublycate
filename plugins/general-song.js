@@ -13,12 +13,40 @@ let handler = async (m, { conn }) => {
     let { name, limit, exp, lastclaim, registered, regTime, age, level } = global.DATABASE.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let username = conn.getName(who)
-    let str = `HELLO : ${username} ${registered ? '(' + name + ') ': ''})
-I AM QUEEN SAKURA 
+    let str = `『 𝐘𝐎𝐔𝐓𝐔𝐁𝐄-𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 』
+╭╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼❑    
+╿HELLO ${username} ${registered ? '(' + name + ') ': ''})
+╰╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼❑
+🔱 *කරුණාකර ඔබට අවශ්‍ය ගොනුව බාගත කරගැනීමට සදහා පහත පියවර අනුගමනය කරන්න..*
+🔱 *Hey user please follow the steps below to download the file you need..*
+
+1️⃣ *Steps one ❲ පළමු පියවර ❳*
+*🎧ලින්කුවක් නොමැතිව ගීත බාගත කිරීම සදහා.*
+*🎧Download audio without youtube url.*
+
+.play <enter the *song* name>
+
+2️⃣ *Steps two ❲ දෙවන පියවර ❳*
+*🎧ඔබගේ ගීතය Audio ආකාරයට ලබාගැනීමට හැකි අතර මේ සදහා ලින්කුවක් අවශ්‍ය වේ.*
+*🎧You can get your song in audio form and a link is required for this.*
+
+.yta <youtube url>
+
+3️⃣ *step three ❲ තෙවන පියවර ❳*
+*🎧ඔබගේ ගීතය Document ආකාරයට ලබාගැනීමට හැකි අතර මේ සදහා ලින්කුවක් අවශ්‍ය වේ.*
+*🎧You can get your song in Document form and link is required for this.*
+
+.mp3 <youtube url>
+
+𝗧𝗛𝗜𝗦 𝗜𝗦 🧚‍♂️𝗤𝗨𝗘𝗘𝗡-𝗦𝗔𝗞𝗨𝗥𝗔_𝗠𝗗🧚‍♂️
+𝗗𝗘𝗩𝗘𝗟𝗢𝗣𝗘𝗗 𝗕𝗬 𝗦𝗬𝗕𝗘𝗥-𝗗𝗘𝗠𝗢𝗡𝗦 𝗧𝗘𝗔𝗠
+𝗧𝗛𝗔𝗡𝗞𝗦 𝗙𝗢𝗥 𝗨𝗦𝗘𝗜𝗡𝗚 𝗤𝗨𝗘𝗘𝗡-𝗦𝗔𝗞𝗨𝗥𝗔_𝗪𝗔𝗕𝗢𝗧
+🤭𝗛𝗔𝗩𝗘 𝗔 𝗡𝗜𝗖𝗘 𝗗𝗔𝗬 
+*🔱2024-2025 𝗩𝗘𝗥𝗦𝗜𝗢𝗡*
 `.trim()
     let mentionedJid = [who]
     conn.sendFile(m.chat, pp, 'pp.jpg', str, m, false, { contextInfo: { mentionedJid }})
-    m.react('🎭')
+    m.react('〽️')
   }
 }
 handler.help = ['song']
