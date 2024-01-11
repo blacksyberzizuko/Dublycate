@@ -160,10 +160,10 @@ let ppl = await( await conn.profilePictureUrl(m.sender, 'image').catch(() => 'ht
     m.reply(e)
   }
 }
-handler.help = ['menu']
+handler.help = ['allmenu']
 handler.tags = ['general']
-handler.alias = ['menu', 'help']
-handler.command = /^(menu|help|\?)$/i
+handler.alias = ['allmenu', 'list']
+handler.command = /^(allmenu|list|\?)$/i
 handler.exp = 3
 
 export default handler
