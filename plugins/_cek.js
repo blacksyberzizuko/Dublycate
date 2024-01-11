@@ -1,6 +1,6 @@
 let handler = async ( m ) => {
-  m.reply('*👋 HELLO USER I AM ALIVE NOW*')
   m.react('🧚‍♂️')
+  m.reply('*👋 HELLO USER I AM ALIVE NOW*')
 }
 
 handler.command = /^(cek|tes|alive|p|a)$/i
