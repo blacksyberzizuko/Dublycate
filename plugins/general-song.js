@@ -25,18 +25,21 @@ let handler = async (m, { conn }) => {
 *🎧Download audio without youtube url.*
 
 .play <enter the *song* name>
+eg. .play I am rider
 
 2️⃣ *Steps two ❲ දෙවන පියවර ❳*
 *🎧ඔබගේ ගීතය Audio ආකාරයට ලබාගැනීමට හැකි අතර මේ සදහා ලින්කුවක් අවශ්‍ය වේ.*
 *🎧You can get your song in audio form and a link is required for this.*
 
 .yta <youtube url>
+eg. .yta https://youtube.com/watch?v=jgRDLrrBjvU
 
 3️⃣ *step three ❲ තෙවන පියවර ❳*
 *🎧ඔබගේ ගීතය Document ආකාරයට ලබාගැනීමට හැකි අතර මේ සදහා ලින්කුවක් අවශ්‍ය වේ.*
 *🎧You can get your song in Document form and link is required for this.*
 
-.mp3 <youtube url>
+.ytmp3 <youtube url>
+eg. .ytmp3 https://youtube.com/watch?v=jgRDLrrBjvU
 
 𝗧𝗛𝗜𝗦 𝗜𝗦 🧚‍♂️𝗤𝗨𝗘𝗘𝗡-𝗦𝗔𝗞𝗨𝗥𝗔_𝗠𝗗🧚‍♂️
 𝗗𝗘𝗩𝗘𝗟𝗢𝗣𝗘𝗗 𝗕𝗬 𝗦𝗬𝗕𝗘𝗥-𝗗𝗘𝗠𝗢𝗡𝗦 𝗧𝗘𝗔𝗠
