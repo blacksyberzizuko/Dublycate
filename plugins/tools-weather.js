@@ -15,10 +15,11 @@ let handler = async (m, { args }) => {
     const Maximum_Temperature = res.data.main.temp_max + "°C"
     const Humidity = res.data.main.humidity + "%"
     const Wind = res.data.wind.speed + "km/h"
-    const wea = `「 📍 」 Place: ${name}\n「 🗺️ 」 Country: ${Country}\n「 🌤️ 」 Weather: ${Weather}\n「 🌡️ 」Temperature: ${Temperature}\n「 💠 」 Minimum Temperature: ${Minimum_Temperature}\n「 📛 」 Maximum Temperature: ${Maximum_Temperature}\n「 💦 」 Humidity: ${Humidity}\n「 🌬️ 」 Wind: ${Wind}
+    const wea = `╔╦═══════════❑\n║║ location: ${name}\n║║ Country: ${Country}\n║║ Weather: ${Weather}\n║║Temperature: ${Temperature}\n║║ Minimum Temperature: ${Minimum_Temperature}\n║║ Maximum Temperature: ${Maximum_Temperature}\n║║ Humidity: ${Humidity}\n║║ Wind: ${Wind}\n╚╩════════❑
   `
 
     m.reply(wea)
+    m.react('🌤️')
   } catch (e) {
     return "Error location not found!!!"
   }
