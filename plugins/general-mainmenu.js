@@ -111,12 +111,13 @@ let handler = async (m, { conn }) => {
 ╚╩═════════❑
 ╭╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼❖
 ╿ 🧚‍♂️𝙌𝙐𝙀𝙀𝙉-𝙎𝘼𝙆𝙐𝙍𝘼_𝙈𝘿_𝙑2
-╰╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼❖`
-    let pp = './src/sakura.jpg' 
-    conn.sendFile(m.chat, pp, 'sakura.jpg', m2, m, null, rpl)
-    m.react('🧚‍♂️')
+╰╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼❖
+`.trim()
+    let mentionedJid = [who]
+    conn.sendFile(m.chat, pp, './src/sakura.jpg', str, m, false, { contextInfo: { mentionedJid }})
+    m.react('🎭')
+  }
 }
-
 handler.help = ['menu']
 handler.tags = ['general']
 handler.command = /^menu$/i
