@@ -5,8 +5,9 @@ import axios from 'axios'
 let handler = async (m, { 
 conn, text, command, usedPrefix
 }) => {
-if (!text) return m.reply(`Use formats ${usedPrefix + command} <url>\n\n*Example :* ${usedPrefix + command} https://github.com/xxirfanx`)
+if (!text) return m.reply(`Use formats ${usedPrefix + command} <url>\n\n*Example :* ${usedPrefix + command} https://youtube.com/watch?v=0geqOYqwL0s`)
 m.reply(global.wait)
+m.react('📸')
 var phone = await ssweb(text, 'phone')
 var desktop = await ssweb(text, 'desktop')
 var tablet = await ssweb(text, 'tablet')
@@ -57,13 +58,13 @@ async function ssweb(url, device = 'desktop'){
                     }).then(({ data }) => {
                        let result = {
                             status: 200,
-                            author: 'by lua',
+                            author: 'Sakura',
                             result: data
                         }
                          resolve(result)
                     })
                } else {
-                    reject({ status: 404, author: 'by lua', message: data.data })
+                    reject({ status: 404, author: 'Queen-sakura', message: data.data })
                }
           }).catch(reject)
      })
