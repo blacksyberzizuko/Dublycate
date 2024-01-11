@@ -142,7 +142,7 @@ let handler = async (m, {
 }
 handler.help = ["play"].map(v => v + " <search>")
 handler.tags = ["downloader"]
-handler.command = /^(play|song)$/i
+handler.command = /^(play|)$/i
 
 export default handler
 
