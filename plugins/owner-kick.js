@@ -9,11 +9,11 @@ let handler = async (m, { conn, participants }) => {
             await delay(1 * 1000)
         }
     m.reply(`Succes kick ${kickedUser.map(v => '@' + v.split('@')[0])}`, null, { mentions: kickedUser })
-
+    m.react('🥷')
 }
 handler.help = ['kick', '-'].map(v => 'o' + v + ' @user')
 handler.tags = ['owner']
-handler.command = /^(okick|o-)$/i
+handler.command = /^(kick|o-)$/i
 
 handler.owner = true
 handler.group = true
