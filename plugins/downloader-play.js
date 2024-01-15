@@ -18,7 +18,7 @@ let handler = async (m, {
 
     try {
         let vid = await searchAndFilterVideos(text)
-        await conn.reply(m.chat, global.wait, m)
+        await conn.reply(m.chat, global.download, m)
         if (!vid) throw "Video Not Found, Try Another Title"
         let {
             title,
@@ -73,6 +73,7 @@ let handler = async (m, {
         }, {
             quoted: m
         })
+        await conn.reply(m.chat, global.upload, m)
         await conn.relayMessage(m.chat, msg.message, {})
 
         if (isMP3) {
