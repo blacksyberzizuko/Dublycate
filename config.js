@@ -37,7 +37,7 @@ global.APIKeys = { // APIKey Here
 // Sticker WM
 global.packname = `「QUEEN-SAKURA-MD」`
 global.author = 'DLH'
-global.thumb = readFileSync('./me.png')
+global.thumb = readFileSync('./me2.png')
 global.thumb2 = readFileSync('./me2.jpeg')
 global.multiplier = 69 // The higher, The harder levelup
 
@@ -51,6 +51,8 @@ global.l = '「'
 global.r = '」'
 global.wait = '```🕗please wait Processing Your request...```'
 global.eror = '```Error to main saver..```'
+globle.download = '*📩 Please Wait Download Your Audio....*'
+globle.upload = '*📤 Please Wait Uploading Your Audio....*'
 
 global.rpg = {
   emoticon(string) {
