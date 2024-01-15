@@ -51,8 +51,8 @@ global.l = '「'
 global.r = '」'
 global.wait = '```🕗please wait Processing Your request...```'
 global.eror = '```Error to main saver..```'
-globle.download = '*📩 Please Wait Download Your Audio....*'
-globle.upload = '*📤 Please Wait Uploading Your Audio....*'
+globle.dl = '*📩 Please Wait Download Your Audio....*'
+globle.up = '*📤 Please Wait Uploading Your Audio....*'
 
 global.rpg = {
   emoticon(string) {
