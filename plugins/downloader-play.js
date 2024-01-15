@@ -18,7 +18,7 @@ let handler = async (m, {
 
     try {
         let vid = await searchAndFilterVideos(text)
-        await conn.reply(m.chat, global.dl, m)
+        await conn.reply(m.chat, global.wait2, m)
         if (!vid) throw "Video Not Found, Try Another Title"
         let {
             title,
