@@ -22,7 +22,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 			if (!anu.link.link) throw new Error('Error')
 			await conn.reply(m.chat, global.wait, m)
 			m.react('🎧')
-			await conn.sendFAudio(m.chat, { [/mp3/g.test(command) ? 'document' : 'audio']: { url: anu.link.link }, mimetype: 'audio/mpeg', fileName: `${anu.title}.mp3` }, m, anu.title, anu.thumbnail, args[0])
+			await conn.sendFAudio(m.chat, { [/mp3/g.test(command) ? 'document' : 'audio']: { url: anu.link.link }, mimetype: 'audio/mpeg', fileName: `${anu.title}.mp3` }, m, anu.title, args[0])
 		} catch (e) {
 			console.log(e)
 			try {
@@ -33,7 +33,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 				if (vsize == "GB") return m.reply(`No brain.\nWhere can I send videos ${anu.size}`)
 				if (!somematch(['kB','KB'], vsize) && parseInt(anu.size.replace(" MB", "")) > 400) return m.reply(`Filesize: ${anu.size}\nUnable to send, maximum file size is 400 MB`)
 				if (!anu.link) throw new Error('Error')
-				await conn.sendFAudio(m.chat, { [/mp3/g.test(command) ? 'document' : 'audio']: { url: anu.link }, mimetype: 'audio/mpeg', fileName: `${anu.title}.mp3` }, m, anu.title, anu.thumbnail, args[0])
+				await conn.sendFAudio(m.chat, { [/mp3/g.test(command) ? 'document' : 'audio']: { url: anu.link }, mimetype: 'audio/mpeg', fileName: `${anu.title}.mp3` }, m, anu.title, args[0])
 			} catch (e) {
 				console.log(e)
 				throw `Invalid Youtube URL / there is an error.`
