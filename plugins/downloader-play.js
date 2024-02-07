@@ -143,7 +143,8 @@ let handler = async (m, {
 handler.help = ["play"].map(v => v + " <search>")
 handler.tags = ["downloader"]
 handler.command = /^(play|)$/i
-
+handler.group = true
+handler.botAdmin = true
 export default handler
 
 function formatNumber(num) {
