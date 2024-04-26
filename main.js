@@ -46,6 +46,7 @@ const {
 } = await import('@adiwajshing/baileys')
 
 const { CONNECTING } = ws
+const PhoneNumber = require('awesome-phonenumber')
 const { chain } = lodash
 const PORT = process.env.PORT || process.env.SERVER_PORT || 27257
 
@@ -57,7 +58,7 @@ global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.
 global.timestamp = {
   start: new Date
 }
-
+let phoneNumber = "94770378874"
 const __dirname = global.__dirname(import.meta.url)
 
 global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
@@ -92,6 +93,8 @@ loadDatabase()
 
 global.authFile = `sessions`;
 
+const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
+const useMobile = process.argv.includes("--mobile")
 const msgRetryCounterCache = new NodeCache()
 const msgRetryCounterMap = (MessageRetryMap) => { };
 
@@ -128,6 +131,7 @@ const connectionOptions = {
   },
   msgRetryCounterMap,
   logger: Pino({level: 'silent'}),
+  printQRInTerminal: !pairingCode,
   auth: {
     creds: state.creds,
     keys: makeCacheableSignalKeyStore(state.keys, Pino({level: 'silent'})),
@@ -167,6 +171,29 @@ function clearTmp() {
 
 async function connectionUpdate(update) {
   const { receivedPendingNotifications, connection, lastDisconnect, isOnline, isNewLogin } = update
+  if (pairingCode && !.authState.creds.registered) {
+  if (useMobile) throw new Error('Cannot use pairing code with mobile api')
+  let phoneNumber
+      if (!!phoneNumber) {
+         phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
+
+         if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
+            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +916909137213")))
+            process.exit(0)
+         }
+      } else {
+         phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number 😍\nFor example: +916909137213 : `)))
+         phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
+
+         // Ask again when entering the wrong number
+         if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
+            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +916909137213")))
+
+            phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number 😍\nFor example: +916909137213 : `)))
+            phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
+            rl.close()
+         }
+      }
   if (isNewLogin) conn.isInit = true
   if (connection == 'connecting') console.log(chalk.redBright('⚡ Activating Bot, Please wait a moment...'))
   if (connection == 'open') console.log(chalk.green('✅ Connected'))
